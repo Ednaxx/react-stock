@@ -1,0 +1,27 @@
+#items-layout {
+    min-height: 800px;
+    display: flex;
+    flex-direction: column;
+}
+
+#page-title {
+    font-size: 3rem;
+    font-weight: 100;
+}
+
+#items-layout nav {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.87);
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    display: flex;
+    gap: 20px;
+}
+
+#items-layout nav a {
+    padding: 20px;
+}
+
+#items-layout nav a:hover {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.87);
+    padding: 20px 20px 18px 20px;
+}

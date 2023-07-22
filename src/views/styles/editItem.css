@@ -1,0 +1,47 @@
+form {
+    width: 80%;
+    align-self: center;
+}
+
+#inputs-frame {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.inputs input, select {
+    width: 300px;
+    border-radius: 2px;
+}
+
+.inputs input, select, textarea {
+    font-size: 1.1rem;
+}
+
+label {
+    margin-bottom: 5px;
+    font-size: 1.1rem
+}
+
+button[type="submit"] {
+    border-radius: 2px;
+    border: 2px solid transparent;
+    padding: 0.5em 1em;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: inherit;
+    background-color: #9e94f3;
+    color: #1a1a1a;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+button[type="submit"]:hover {
+    border-color: #646cff;
+}

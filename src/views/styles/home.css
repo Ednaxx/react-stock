@@ -1,0 +1,81 @@
+#dashboard-main-container {
+    min-height: 800px;
+    display: flex;
+    flex-direction: column;
+}
+
+#dashboard-main-container h1 {
+    font-size: 3rem;
+    font-weight: 100;
+}
+
+#top-cards {
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
+}
+
+#bottom-cards {
+    height: 436px;
+    margin: 30px 0 30px 0;
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
+}
+
+.bottom-card {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+
+.bottom-card-header {
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #151515;
+    box-shadow: 3px 3px 3px black;
+
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+
+    position: sticky;
+    top: 0;
+}
+
+.list-item {
+    font-size: 1.2rem;
+    margin: 20px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.list-item-name {
+    width: 50%;
+}
+
+.list-item-ammount {
+    width: 20px;
+}
+
+.list-item-action {
+    width: 180px;
+}
+
+.list-item-action button {
+    border-radius: 8px;
+    border: 2px solid transparent;
+    padding: 0.5em 1em;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: inherit;
+    background-color: #e4e4e4;
+    color: #1a1a1a;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+
+.list-item-action button:hover {
+    border-color: #646cff;
+}

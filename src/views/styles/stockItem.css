@@ -1,0 +1,67 @@
+#item-header {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+}
+
+#item-header h2 {
+    font-size: 3rem;
+    font-weight: 100;
+    margin: 10px 0 20px 0;
+}
+
+#item-header button {
+    height: 2.3rem;
+    font-size: 1.1rem;
+    color: #1a1a1a;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    border-radius: 4px;
+    padding: 0 20px;
+}
+
+#item-header button:hover {
+    border-color: #646cff;
+}
+
+#update {
+    background-color: #e4e4e4;
+    border-color: #e4e4e4;
+}
+
+#update a {
+    color: #151515;
+}
+
+#delete {
+    background-color: #db2020;
+    border-color: #db2020;
+}
+
+#timestamps {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin: 0 0 40px 0;
+    color: rgba(255, 255, 255, 0.596);
+    font-size: 1.2rem;
+}
+
+#item-cards {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+#item-cards div {
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: #151515;
+    box-shadow: 3px 3px 3px black;
+    padding: 30px;
+}
+
+#description {
+    font-size: 1.7rem;
+}
