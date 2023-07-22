@@ -16,13 +16,19 @@ form {
     font-size: 1.1rem;
 }
 
-.inputs input, select {
+.inputs input {
     width: 300px;
     border-radius: 2px;
 }
 
-.inputs input, select, textarea {
+.inputs input, textarea {
     font-size: 1.1rem;
+}
+
+#category {
+    background:url('../../assets/arrow-down.svg') no-repeat;
+    background-position: 95%;
+    background-color: #1a1a1a;
 }
 
 label {

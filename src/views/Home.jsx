@@ -2,7 +2,7 @@ import RecentItems from "./components/recentItems/RecentItems";
 import TopCard from "./components/topCards/TopCard";
 import "./styles/home.css";
 import RunningOut from "./components/runningOut/RunningOut";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 
 export default function Home() {
     const products = useLoaderData();

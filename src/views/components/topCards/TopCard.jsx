@@ -1,4 +1,4 @@
-import "./TopCard.css";
+import "./topCard.css";
 
 export default function TopCard({ title, value }) {
     return (

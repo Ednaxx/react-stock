@@ -16,10 +16,10 @@ export default function StockItems() {
 
             {products.map(product => {
                 return (
-                    <div className="list-item">
+                    <div className="list-item" key={product.id}>
                         <span className="items-list-id">{product.id}</span>
                         <span className="items-list-name">{product.name}</span>
-                        <span className="items-list-inStock">{product.inStock}</span>
+                        <span className="items-list-inStock">{product.amount}</span>
                         <span className="items-list-category">{product.category}</span>
                         <span className="items-list-actions">
                             <button id="items-list-view"><Link to={`stock-items/${product.id}`}>View</Link></button>
