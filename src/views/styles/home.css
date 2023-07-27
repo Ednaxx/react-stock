@@ -76,6 +76,10 @@
     transition: border-color 0.25s;
 }
 
+.list-item-action button a {
+    color: #1a1a1a; 
+}
+
 .list-item-action button:hover {
     border-color: #646cff;
 }
