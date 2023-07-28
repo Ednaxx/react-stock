@@ -1,18 +1,17 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 import "./styles/itemsLayout.css";
-import { useState } from "react";
 
 export default function ItemsLayout() {
-    const [ selectedTab, setSelectedTab ] = useState(null);
+    const { pathname } = useLocation();
     
     return (
         <div id="items-layout">
             <h1 id="page-title">Stock Items</h1>
             <nav>
-                <Link to={"/stock-items"} className={(selectedTab == "all") ? "selected-tab" : null}>All items</Link>
-                <Link to={"/stock-items/newItem"} className={(selectedTab == "new") ? "selected-tab" : null}>New item</Link>
+                <Link to={"/stock-items"} className={pathname === "/stock-items" ? "selected-tab" : ""}>All items</Link>
+                <Link to={"/stock-items/newItem"} className={pathname === "/stock-items/newItem" ? "selected-tab" : ""}>New item</Link>
             </nav>
-            <Outlet context={[setSelectedTab]}/>
+            <Outlet />
         </div>
     )
 }

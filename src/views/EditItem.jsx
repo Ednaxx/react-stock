@@ -1,22 +1,15 @@
-import { useLoaderData, useNavigate, useOutletContext, useParams } from "react-router-dom";
-import handleFormSubmit from "../eventHandlers/handleFormSubmit.js";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
+import handleFormSubmit from "./eventHandlers/handleFormSubmit.js";
 import "./styles/editItem.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import FormInput from "./components/formInput/FormInput.jsx";
 
 export default function EditItem() {
     const { itemId } = useParams();
     const navigate = useNavigate();
-    const [setSelectedTab] = useOutletContext();
     const product = useLoaderData();
 
     const [inputValues, setInputValues] = useState((product) ? {...product} : { id: itemId });
-
-    useEffect(() => {
-        if (itemId === undefined) {
-            setSelectedTab("new");
-        }
-    });
 
     return (
         <form onSubmit={(ev => {

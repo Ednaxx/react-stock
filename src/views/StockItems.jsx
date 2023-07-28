@@ -1,15 +1,10 @@
 import { Link, useLoaderData, useOutletContext } from "react-router-dom";
 import "./styles/stockItems.css";
-import { useEffect, useState } from "react";
-import handleDeleteItem from "../eventHandlers/handleDeleteItem";
+import { useState } from "react";
+import handleDeleteItem from "./eventHandlers/handleDeleteItem.js";
 
 export default function StockItems() {
     const [ products, setProducts ] = useState(useLoaderData());
-    const [setSelectedTab] = useOutletContext();
-    
-    useEffect(() => {
-        setSelectedTab("all");
-    })
 
     return (
         <div id="items-main-container">

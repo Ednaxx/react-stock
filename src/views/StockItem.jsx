@@ -1,19 +1,10 @@
-import { Link, useLoaderData, useNavigate, useOutletContext } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import "./styles/stockItem.css";
-import { useEffect } from "react";
-import handleDeleteItem from "../eventHandlers/handleDeleteItem";
+import handleDeleteItem from "./eventHandlers/handleDeleteItem.js";
 
 export default function StockItem() {
     const product = useLoaderData();
     const navigate = useNavigate();
-
-    // Navbar selected style
-
-    const [setSelectedTab] = useOutletContext();
-
-    useEffect(() => {
-        setSelectedTab(null);
-    })
 
     // Date formatting variables
 
