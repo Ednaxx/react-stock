@@ -1,44 +1,41 @@
-import { Link, useLoaderData, useNavigate } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import "./styles/stockItem.css";
-import handleDeleteItem from "./eventHandlers/handleDeleteItem.js";
+import { StockContext } from "../model/StockContext";
+import { useContext } from "react";
 
 export default function StockItem() {
-    const product = useLoaderData();
+    const { deleteItem, getItem } = useContext(StockContext);
     const navigate = useNavigate();
+    const { itemId } = useParams();
 
-    // Date formatting variables
-
-    const updatedAt = new Date(product.updatedAt);
-    const updatedAtDay = updatedAt.getDate();
-    const updatedAtMonth = updatedAt.getMonth();
-
-    const createdAt = new Date(product.createdAt);
-    const createdAtDay = createdAt.getDate();
-    const createdAtMonth = createdAt.getMonth();
+    const item = getItem(itemId);
 
     return (
         <div id="item-container">
             <div id="item-header">
-                <h2>{product.name}</h2>
-                <button id="update"><Link to={`/stock-items/${product.id}/editItem`}>Edit</Link></button>
+                <h2>{item.name}</h2>
+                <button id="update"><Link to={`/stock-items/${item.id}/editItem`}>Edit</Link></button>
                 <button id="delete" onClick={() => {
-                    const deleted = handleDeleteItem(product.id);
-                    if (deleted) navigate("/stock-items");
-                }}>Delete</button>
+                    if (!confirm(`Do you wish to delete "${item.name}"? `)) return;
+                    navigate("/stock-items");
+                    deleteItem(item.id);
+                }}>
+                    Delete
+                </button>
             </div>
 
             <div id="timestamps">
-                <span>Created at: {`${(createdAtDay < 10) ? '0' + createdAtDay : createdAtDay}/${(createdAtMonth < 10) ? '0' + createdAtMonth : createdAtMonth}/${createdAt.getFullYear()}`}</span>
-                <span>Updated at: {`${(updatedAtDay < 10) ? '0' + updatedAtDay : updatedAtDay}/${(updatedAtMonth < 10) ? '0' + updatedAtMonth : updatedAtMonth}/${updatedAt.getFullYear()}`}</span>
+                <span>Created at: {`${item.createdAt.getDate()}/${item.createdAt.getMonth() + 1}/${item.createdAt.getFullYear()}`}</span>
+                <span>Updated at: {`${item.updatedAt.getDate()}/${item.updatedAt.getMonth() + 1}/${item.updatedAt.getFullYear()}`}</span>
             </div>
 
             <div id="item-cards">
-                <div id="category-card">Category: {product.category}</div>
-                <div id="stock-card">In Stock: {product.amount}</div>
-                <div id="price-card">Price: {Number(product.price).toLocaleString("pt-BR", { style: 'currency', currency: 'BRL' })}</div>
+                <div id="category-card">Category: {item.category}</div>
+                <div id="stock-card">In Stock: {item.amount}</div>
+                <div id="price-card">Price: {Number(item.price).toLocaleString("pt-BR", { style: 'currency', currency: 'BRL' })}</div>
             </div>
-            
-            <p id="description">{product.description}</p>
+
+            <p id="description">{item.description}</p>
         </div>
     )
 }

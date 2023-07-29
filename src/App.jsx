@@ -1,6 +1,6 @@
 import { RouterProvider } from "react-router-dom"
 import router from "./router"
-import StockContextProvider from "./model/ScockContext"
+import { StockContextProvider } from "./model/StockContext"
 
 export default function App() {
 

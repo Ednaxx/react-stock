@@ -1,14 +1,14 @@
 import { useState } from "react"
 
-export default function FormInput({ label, type, id, setInputValues, inputValues, datalist, product }) {
+export default function FormInput({ label, type, id, setInputValues, inputValues, datalist, item }) {
 
     const [inputValue, setInputValue] = useState(() => {
-        if (!product) return "";
-        if (id === "name") return product.name;
-        if (id === "category") return product.category;
-        if (id === "price") return product.price;
-        if (id === "amount") return product.amount;
-        if (id === "description") return product.description;
+        if (!item) return "";
+        if (id === "name") return item.name;
+        if (id === "category") return item.category;
+        if (id === "price") return item.price;
+        if (id === "amount") return item.amount;
+        if (id === "description") return item.description;
     });
 
     if (type === "text") {
