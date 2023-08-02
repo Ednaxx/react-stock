@@ -3,7 +3,7 @@ import TopCard from "./components/topCards/TopCard";
 import "./styles/home.css";
 import RunningOut from "./components/runningOut/RunningOut";
 import { useContext } from "react";
-import { StockContext } from "../model/StockContext";
+import { StockContext } from "../entities/StockContext";
 
 export default function Home() {
     const { stockItems } = useContext(StockContext);

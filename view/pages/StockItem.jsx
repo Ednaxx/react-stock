@@ -1,6 +1,6 @@
 import { Link, useParams, useNavigate } from "react-router-dom";
 import "./styles/stockItem.css";
-import { StockContext } from "../model/StockContext";
+import { StockContext } from "../entities/StockContext";
 import { useContext } from "react";
 
 export default function StockItem() {

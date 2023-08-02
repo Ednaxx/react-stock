@@ -1,13 +1,10 @@
-import { v4 as uuid } from 'uuid';
-
 export default class Item {
-    constructor({ name, description, amount, price, category, createdAt = null, updatedAt = null, id = null }) {
+    constructor({ name, description, amount, price, category, createdAt = null, updatedAt = null}) {
         this.name = name;
         this.description = description;
         this.amount = amount;
         this.price = price;
         this.category = category;
-        this.id = (id === null) ? uuid() : id;
         this.createdAt = (createdAt === null) ? new Date() : createdAt;
         this.updatedAt = (updatedAt === null) ? new Date() : updatedAt;
     }

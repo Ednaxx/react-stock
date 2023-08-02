@@ -2,8 +2,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import "./styles/editItem.css";
 import { useContext, useState } from "react";
 import FormInput from "./components/formInput/FormInput.jsx";
-import { StockContext } from "../model/StockContext.jsx";
-import Item from "../model/Item";
+import { StockContext } from "../entities/StockContext.jsx";
+import Item from "../entities/Item";
 
 
 export default function EditItem() {

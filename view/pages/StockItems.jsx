@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./styles/stockItems.css";
 import { useContext } from "react";
-import { StockContext } from "../model/StockContext";
+import { StockContext } from "../entities/StockContext";
 
 export default function StockItems() {
     const { stockItems, deleteItem } = useContext(StockContext);
