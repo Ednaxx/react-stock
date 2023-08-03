@@ -50,14 +50,12 @@ itemsRouter.put("/:id", async (req, res) => {
     const item = req.body;
 
     try {
-        console.log(item)
-        console.log(req.params.id)
         await Item.findOneAndUpdate({_id: req.params.id}, item);
         res.status(200).end();
     }
     catch (err) {
         console.log(err);
-        res.status(500).send("Something went wrong!");
+        res.status(400).send("Something went wrong!");
     }
 });
 
