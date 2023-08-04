@@ -7,7 +7,7 @@ import Item from "../entities/Item";
 
 
 export default function EditItem() {
-    const { getItem, addItem, updateItem } = useContext(StockContext);
+    const { getItem, addItem, updateItem, stockItems } = useContext(StockContext);
     const { itemId } = useParams();
     const item = (itemId) ? getItem(itemId) : null;
     
@@ -35,7 +35,7 @@ export default function EditItem() {
                 <FormInput label={"Category"} type={"text"} id={"category"} setInputValues={setInputValues} inputValues={inputValues} item={item}
                     datalist={
                         <datalist id="categories">
-                            {["Option1", "Option2", "Option3"].map(category => (<option value={category} key={category}>{category}</option>))}
+                            {stockItems.map(item => (<option value={item.category} key={item.category}>{item.category}</option>))}
                         </datalist>
                     }
                 />
